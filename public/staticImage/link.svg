@@ -1,0 +1,10 @@
+<svg id="Icons_-_Line_-_Navigation" data-name="Icons - Line - Navigation" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Rectangle_4" data-name="Rectangle 4" fill="none" stroke="#14142b" stroke-width="1" opacity="0">
+    <rect width="24" height="24" stroke="none"/>
+    <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+  </g>
+  <g id="Arrow_Going_Up" data-name="Arrow Going Up" transform="translate(-2.154 -1.253)">
+    <path id="Path_217" data-name="Path 217" d="M8.664,5.436l12.385.255L21.3,18.076" transform="translate(0.636)" fill="none" stroke="#14142b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Line_2" data-name="Line 2" x1="14.205" y2="14.205" transform="translate(6.365 6.864)" fill="none" stroke="#14142b" stroke-linecap="round" stroke-width="2"/>
+  </g>
+</svg>

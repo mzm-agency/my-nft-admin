@@ -1,0 +1,231 @@
+/* Video */
+    .video .body {
+        width: 100%;
+        height: 100%;
+    }
+    .video .search .ant-input {
+        color: #fdfdfd;
+        font-family: 'Inter Regular', sans-serif;
+        background-color: transparent;
+    }
+    .video .search .ant-input-affix-wrapper {
+        width: 225px;
+        padding-left: 15px;
+        border: none;
+        height: 42px;
+        font-family: 'Inter Regular', sans-serif;
+        background-color: transparent;
+    }
+    .video .search .ant-input-group-addon .ant-btn {
+        border: none;
+    }
+    .video .search .ant-input-group-addon .ant-btn span {
+        -webkit-mask-image: url(./cssImg/search.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 16px;
+        height: 16px;
+    }
+    .video .search .ant-input-group-addon .ant-btn span svg {
+        display: none;
+    }
+    .video .search  .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+        background-color: transparent;
+        border: none;
+    }
+    .video .search .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+        background-color: transparent;
+        border: none;
+    }
+    .video .search .ant-input {
+        height: auto;
+    }
+    .video .imageLarge {
+        height: 225px;
+    }
+    .video .imageMedium {
+        height: 175px;
+    }
+    .video .imageSmall {
+        height: 135px;
+    }
+    .video .live {
+        padding: 4px 8px;
+        top: 0;
+        left: 15px;
+        z-index: 1;
+    }
+    .video .vHeader {
+        width: 100%;
+    }
+    .video .vHeader .search::placeholder, input::placeholder, input[type=search]::placeholder, input[type=text]::placeholder {
+        color: #7b8a95;
+    }
+    .video .vHeader .search .ant-input {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    .video .vHeader .search .ant-btn span {
+        background-color: #7b8a95;
+    }
+    .video .vHeader .menu a:hover {
+        color: #7b8a95;
+    }
+    .video .vHeader .menu a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        background-color: #ffffff;
+        border-radius: 99px;
+        height: 4px;
+        width: 4px;
+    }
+    .video .vHeader .menu a:first-child:before {
+        content: none;
+    }
+    .video .vHeader .stream:hover a {
+        background-color: #00f5ff;
+        color: #ffffff;
+    }
+    .video .left {
+        top: 0;
+        z-index: 1;
+        max-width: 75px;
+        width: 100%;
+        height: 100%;
+    }
+    .video .left .logo {
+        padding-bottom: 17px;
+    }
+    .video .left .logo a {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #fff;
+    }
+    .video .left .logo:hover a {
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
+    }
+    .video .left .menu li {
+        list-style: none;
+    }
+    .video .left .menu li.active {
+        background-color: #6400ff;
+    }
+    .video .left .menu li svg path {
+        fill: #ffffff;
+    }
+    .video .left .menu li:hover {
+        background-color: #6400ff;
+    }
+    .video .right {
+        padding-top: 40px;
+        padding-left: 110px;
+        padding-right: 25px;
+    }
+    .video .channel .slick-slide {
+        margin-right: 40px;
+    }
+    .video .channel .slick-arrow {
+        display: none !important;
+    }
+    .video .channel .slick-slide .item .image img {
+        width: 75px;
+        height: 75px;
+    }
+    .video .channel .item:hover img {
+        filter: grayscale(1);
+    }
+    .video .channel .item h3.title a:hover {
+        color: #ffffff;
+    }
+    .video .list .item .content {
+        transition: background-color 150ms;
+        transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
+    }
+    .video .list .item .content .image {
+        transition: transform 150ms;
+    }
+    .video .list .item .content .image .time {
+        background-color: rgba(16, 18, 20, .75);
+        right: 5px;
+        bottom: 5px;
+        border-radius: 3px;
+        padding: 5px 6px;
+        color: #f4f6f8;
+    }
+    .video .list .item .avatar {
+        width: 36px;
+        height: 36px;
+    }
+    .video .list .more button {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .video .list .item h3.title {
+        overflow: hidden;
+    }
+    .video .list .item h3.title a {
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+    .video .category {
+        overflow: hidden;
+    }
+    .video .list .more button:hover {
+        background-color: #c2e0ff33;
+    }
+    .video .list .item .content:hover {
+        background-color: #6400ff;
+    }
+    .video .list .item .content:hover .image {
+        transform: translate(-8px, -8px);
+    }
+    .video .list .item .content:hover .image::before {
+        opacity: 1;
+    }
+    .video .list .item .content:hover .image .icon {
+        opacity: 1;
+        transition: background-color 150ms;
+    }
+    .video .list .item:hover a {
+        color: #ffffff;
+    }
+    .video .list .item:hover a.subLink {
+        color: rgba(98, 105, 115,1);
+    }
+    .video .list .number {
+        font-size: 180px;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: #424e57;
+        color: #000;
+        line-height: .7;
+    }
+    .video .addBar .item .article .content {
+        transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    }
+    .video .addBar .item .article:hover .content {
+        transform: translate(-8px, -8px);
+    }
+    .video .addBar .item .article:hover {
+        background-color: #ff695f;
+    }
+    .video .addBar .item .green:hover {
+        background-color: #0eb152;
+    }
+    .video .addBar .item .blue:hover {
+        background-color: #4038ff;
+    }
+/* Video End */
