@@ -1,44 +1,41 @@
 import React, {useCallback, useState} from 'react'
 import {Button, Form, Input, Table, Tag} from "antd";
+import {ExclamationCircleOutlined} from "@ant-design/icons";
 
 const dataSource = [
     {
         key: '1',
-        email: 't.sumbe0119@gmail.com',
+        number: '1',
+        image: 'https://unsplash.com/photos/jA3WjtwdpIY',
         uuid: 'ID54652687',
-        role: 'member',
         date: '2022-01-19 15:00',
-        tags: ['pending'],
         nft: '2',
         price: '1,200,000'
     },
     {
         key: '2',
-        email: 'zorgio08@gmail.com',
+        number: '2',
+        image: 'https://unsplash.com/photos/jA3WjtwdpIY',
         uuid: 'ID54656687',
-        role: 'member',
         date: '2022-01-19 15:00',
-        tags: ['loser'],
         nft: '3',
         price: '1,000,000'
     },
     {
         key: '3',
-        email: 'Bymbaa08@gmail.com',
+        number: '3',
+        image: 'https://unsplash.com/photos/jA3WjtwdpIY',
         uuid: 'ID54654687',
-        role: 'member',
         date: '2022-01-19 15:00',
-        tags: ['active'],
         nft: '2',
         price: '1,800,000'
     },
     {
         key: '4',
-        email: 'Munkhuu@gmail.com',
+        number: '4',
+        image: 'https://unsplash.com/photos/jA3WjtwdpIY',
         uuid: 'ID54654687',
-        role: 'member',
         date: '2022-01-19 15:00',
-        tags: ['loser'],
         nft: '1',
         price: '2,200,000'
     },
@@ -46,20 +43,16 @@ const dataSource = [
 
 const columns = [
     {
-        title: 'UID',
-        dataIndex: 'uuid',
-        key: 'uuid',
+        title: '№',
+        dataIndex: 'number',
+        titile : '',
+        key: 'number',
     },
     {
-        title: 'Email',
-        dataIndex: 'email',
-        key: 'email',
+        title: 'Nft Зураг',
+        dataIndex: 'image',
+        key: 'image',
 
-    },
-    {
-        title: 'Эрх',
-        dataIndex: 'role',
-        key: 'role',
     },
     {
         title: 'Огноо',
@@ -77,30 +70,25 @@ const columns = [
         key: 'price',
     },
     {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (tags: any) => (
-            <>
-                {tags.map((tag: any) => {
-                    let color = tag;
-                    if (tag === 'loser') {
-                        color = 'pink';
-                    } else if (tag === 'pending') {
-                        color = '#f29339'
-                    } else if (tag === 'active') {
-                        color = 'green'
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
+        title: 'Үйлдэл',
+        dataIndex: '',
+        key: 'x',
+        render: (text: string, record: any) => <div>
+            <Button style={{marginRight: 24}} onClick={() => {}}
+                    type="default" >Засах</Button>
+            <Button onClick={() =>{}} style={{
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: 'red',
+                color: 'red'
+            }}>Устгах</Button>
+        </div>
     },
 ]
+
+
+
+
 
 interface State {
     loading: boolean
@@ -156,39 +144,6 @@ const Nft = () => {
 
     return (
         <div>
-            <div style={{marginBottom: 30}}>
-                <Form form={form} className="horizontal_search" layout="inline" onFinish={onFinish}>
-                    <Form.Item
-                        name="uid"
-                    >
-                        <Input placeholder="Хэрэглэгчийн ID"/>
-                    </Form.Item>
-                    <Form.Item
-                        name="email"
-                    >
-                        <Input
-                            placeholder="Имэйл"
-                        />
-                    </Form.Item>
-                    <Form.Item>
-                        <Button
-                            type="primary"
-                            htmlType="submit"
-                        >
-                            Хайх
-                        </Button>
-                    </Form.Item>
-                    <Form.Item>
-                        <Button
-                            onClick={() => clearSearch()}
-                            type="default"
-                            htmlType="button"
-                        >
-                            Цэвэрлэх
-                        </Button>
-                    </Form.Item>
-                </Form>
-            </div>
             <Table
                 size="middle"
                 dataSource={dataSource} columns={columns}
