@@ -10,6 +10,7 @@ import {
 import { Breadcrumb, Layout, Menu, Skeleton } from 'antd';
 import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import Nft from "./components/Nft";
 
 import { API } from '../src/api';
 const adminPath = process.env.PUBLIC_URL
@@ -41,7 +42,7 @@ function App() {
     <BrowserRouter>
       <div className="header-container">
         <div className="left">
-          <h3>ADMIN</h3>
+          <h3>MY NFT  ADMIN</h3>
         </div>
       </div>
       {
@@ -57,16 +58,16 @@ function App() {
                 <Menu.Item key="1" icon={<PieChartOutlined />}>
                   <Link to={`${adminPath}/`}>Dashboard</Link>
                 </Menu.Item>
-                <Menu.SubMenu key="sub2" icon={<TeamOutlined />} title="Exchange">
-                  <Menu.Item key="6"><Link to={`${adminPath}/exchange/engines`}>Engine</Link></Menu.Item>
-                  <Menu.Item key="7"><Link to={`${adminPath}/exchange/currencies`}>Currency</Link></Menu.Item>
-                </Menu.SubMenu>
+                  <Menu.Item key="2" icon={<TeamOutlined />} title="NFT">
+                      <Link to={`${adminPath}/exchange/nft`}>NFT</Link>
+                  </Menu.Item>
               </Menu>
             </Layout.Sider>
             <Layout className="site-layout" style={{ marginTop: 20 }}>
               <Layout.Content style={{ margin: '0 16px' }}>
                 <Routes>
                   <Route path={`${adminPath}/`} element={<Dashboard />} />
+                  <Route path={`${adminPath}/exchange/nft`} element={<Nft/>} />
                 </Routes>
               </Layout.Content>
               <Layout.Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Layout.Footer>
