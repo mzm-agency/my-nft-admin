@@ -176,62 +176,64 @@ const BalanceList = () => {
     }, [])
     return (
         <div>
-            <Form form={form} className="horizontal_search" layout="inline" onFinish={onFinish}>
-                <Form.Item
-                    name="TxAddInfSub"
-                >
-                    <Input placeholder="Хэрэглэгчийн ID"/>
-                </Form.Item>
-                <Form.Item
-                    name="Amt"
-                >
-                    <Input
-                        placeholder="Мөнгөн дүн"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="TxAddInf"
-                >
-                    <Input
-                        placeholder="Гүлгээний утга"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="TxDt"
-                >
-                    <RangePicker
-                        format={"YYYY/MM/DD"}
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="status"
-                >
-                    <Select
-                        placeholder="Төлөв"
-                        allowClear
+            <div style={{marginBottom: 30}}>
+                <Form form={form} className="horizontal_search" layout="inline" onFinish={onFinish}>
+                    <Form.Item
+                        name="TxAddInfSub"
                     >
-                        <Select.Option value="pending">pending</Select.Option>
-                        <Select.Option value="completed">completed</Select.Option>
-                    </Select>
-                </Form.Item>
-                <Form.Item>
-                    <Button
-                        type="primary"
-                        htmlType="submit"
+                        <Input placeholder="Хэрэглэгчийн ID"/>
+                    </Form.Item>
+                    <Form.Item
+                        name="Amt"
                     >
-                        Хайх
-                    </Button>
-                </Form.Item>
-                <Form.Item>
-                    <Button
-                        onClick={() => clearSearch()}
-                        type="default"
-                        htmlType="button"
+                        <Input
+                            placeholder="Мөнгөн дүн"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="TxAddInf"
                     >
-                        Цэвэрлэх
-                    </Button>
-                </Form.Item>
-            </Form>
+                        <Input
+                            placeholder="Гүлгээний утга"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="TxDt"
+                    >
+                        <RangePicker
+                            format={"YYYY/MM/DD"}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="status"
+                    >
+                        <Select
+                            placeholder="Төлөв"
+                            allowClear
+                        >
+                            <Select.Option value="pending">pending</Select.Option>
+                            <Select.Option value="completed">completed</Select.Option>
+                        </Select>
+                    </Form.Item>
+                    <Form.Item>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                        >
+                            Хайх
+                        </Button>
+                    </Form.Item>
+                    <Form.Item>
+                        <Button
+                            onClick={() => clearSearch()}
+                            type="default"
+                            htmlType="button"
+                        >
+                            Цэвэрлэх
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
             <Table
                 size="middle"
                 columns={columns}
