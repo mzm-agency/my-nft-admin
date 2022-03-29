@@ -139,7 +139,6 @@ const NftCreate = () => {
     const [form] = Form.useForm();
     const [filter, updateFilter] = useState(initialFilter);
     const [loading, setLoading] = useState(false);
-
     const [state, updateState] = useState(initialState);
 
     const onFinish = useCallback((values) => {

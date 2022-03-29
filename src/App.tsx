@@ -15,6 +15,7 @@ import {API} from '../src/api';
 
 import NftCreate from "./components/NftCreate";
 import Nft from "./components/Nft";
+import BalanceList from "./components/BalanceList";
 
 const adminPath = process.env.PUBLIC_URL
 
@@ -63,6 +64,9 @@ function App() {
                                 <Menu.Item key="2" icon={<TeamOutlined/>} title="NFT">
                                     <Link to={`${adminPath}/exchange/nft`}>Nft</Link>
                                 </Menu.Item>
+                                <Menu.Item key="3" icon={<TeamOutlined/>} title="NFT">
+                                    <Link to={`${adminPath}/exchange/balance`}>Дансны хуулга</Link>
+                                </Menu.Item>
                             </Menu>
                         </Layout.Sider>
                         <Layout className="site-layout" style={{marginTop: 20}}>
@@ -71,9 +75,10 @@ function App() {
                                     <Route path={`${adminPath}/`} element={<Dashboard/>}/>
                                     <Route path={`${adminPath}/exchange/nftCreate`} element={<NftCreate/>}/>
                                     <Route path={`${adminPath}/exchange/nft`} element={<Nft/>}/>
+                                    <Route path={`${adminPath}/exchange/balance`} element={<BalanceList/>}/>
                                 </Routes>
                             </Layout.Content>
-                            <Layout.Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant
+                            <Layout.Footer style={{textAlign: 'center'}}>Ant Design ©2021 Created by Ant
                                 UED</Layout.Footer>
                         </Layout>
                     </Layout>
