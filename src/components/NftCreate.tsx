@@ -10,6 +10,7 @@ const dataSource = [
         date: '2022-01-19 15:00',
         tags: ['pending'],
         nft: '2',
+        name: 'Хурд хамтлаг',
         price: '1,200,000'
     },
     {
@@ -20,6 +21,7 @@ const dataSource = [
         date: '2022-01-19 15:00',
         tags: ['loser'],
         nft: '3',
+        name: 'Хурд хамтлаг',
         price: '1,000,000'
     },
     {
@@ -30,6 +32,7 @@ const dataSource = [
         date: '2022-01-19 15:00',
         tags: ['active'],
         nft: '2',
+        name: 'Хурд хамтлаг',
         price: '1,800,000'
     },
     {
@@ -40,6 +43,7 @@ const dataSource = [
         date: '2022-01-19 15:00',
         tags: ['loser'],
         nft: '1',
+        name: 'Хурд хамтлаг',
         price: '2,200,000'
     },
 ];
@@ -70,6 +74,11 @@ const columns = [
         title: 'create nft',
         dataIndex: 'nft',
         key: 'nft',
+    },
+    {
+        title: 'nft name',
+        dataIndex: 'name',
+        key: 'name',
     },
     {
         title: 'Үнэ',

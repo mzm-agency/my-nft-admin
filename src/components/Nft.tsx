@@ -10,7 +10,8 @@ const dataSource = [
         uuid: 'ID54652687',
         date: '2022-01-19 15:00',
         nft: '2',
-        price: '1,200,000'
+        price: '1,200,000',
+        name: 'Хурд хамтлаг',
     },
     {
         key: '2',
@@ -19,7 +20,8 @@ const dataSource = [
         uuid: 'ID54656687',
         date: '2022-01-19 15:00',
         nft: '3',
-        price: '1,000,000'
+        price: '1,000,000',
+        name: 'Хурд хамтлаг',
     },
     {
         key: '3',
@@ -28,7 +30,8 @@ const dataSource = [
         uuid: 'ID54654687',
         date: '2022-01-19 15:00',
         nft: '2',
-        price: '1,800,000'
+        price: '1,800,000',
+        name: 'Хурд хамтлаг',
     },
     {
         key: '4',
@@ -37,7 +40,8 @@ const dataSource = [
         uuid: 'ID54654687',
         date: '2022-01-19 15:00',
         nft: '1',
-        price: '2,200,000'
+        price: '2,200,000',
+        name: 'Хурд хамтлаг',
     },
 ];
 
@@ -70,12 +74,15 @@ const columns = [
         key: 'price',
     },
     {
+        title: 'nft нэр',
+        dataIndex: 'name',
+        key: 'name',
+    },
+    {
         title: 'Үйлдэл',
         dataIndex: '',
         key: 'x',
         render: (text: string, record: any) => <div>
-            <Button style={{marginRight: 24}} onClick={() => {}}
-                    type="default" >Засах</Button>
             <Button onClick={() =>{}} style={{
                 borderWidth: 1,
                 borderStyle: 'solid',

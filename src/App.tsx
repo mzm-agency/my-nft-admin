@@ -57,13 +57,10 @@ function App() {
                         <Layout.Sider collapsible style={{marginTop: -4}}>
                             <div className="logo"/>
                             <Menu style={{height: "100vh"}} defaultSelectedKeys={['1']} mode="inline">
-                                <Menu.Item key="1" icon={<PieChartOutlined/>}>
-                                    <Link to={`${adminPath}/`}>Dashboard</Link>
-                                </Menu.Item>
-                                <Menu.Item key="2" icon={<TeamOutlined/>} title="NFT">
+                                <Menu.Item key="1" icon={<TeamOutlined/>} title="NFT">
                                     <Link to={`${adminPath}/exchange/nftCreate`}>Create Nft</Link>
                                 </Menu.Item>
-                                <Menu.Item key="3" icon={<TeamOutlined/>} title="NFT">
+                                <Menu.Item key="2" icon={<TeamOutlined/>} title="NFT">
                                     <Link to={`${adminPath}/exchange/nft`}>Nft</Link>
                                 </Menu.Item>
                             </Menu>
