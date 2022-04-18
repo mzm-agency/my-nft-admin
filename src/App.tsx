@@ -17,6 +17,7 @@ import NftCreate from "./components/NftCreate";
 import NftDrop from "./components/NftDrop";
 import Authors from "./components/Authors";
 import Detail from "./components/Detail";
+import TransactionNft from "./components/TransactionNft";
 
 const adminPath = process.env.PUBLIC_URL
 
@@ -82,6 +83,7 @@ function App() {
                                     <Route path={`${adminPath}/exchange/nftDrop`} element={<NftDrop/>}/>
                                     <Route path={`${adminPath}/exchange/authors`} element={<Authors/>}/>
                                     <Route path={`${adminPath}/exchange/nftDrop/detail`} element={<Detail/>}/>
+                                    <Route path={`${adminPath}/exchange/nftDrop/transactionNft`} element={<TransactionNft/>}/>
                                 </Routes>
                             </Layout.Content>
                             <Layout.Footer style={{textAlign: 'center'}}>Ant Design ©2021 Created by Ant

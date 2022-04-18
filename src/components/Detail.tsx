@@ -11,6 +11,10 @@ const Detail = () => {
                 хамтран төлөвлөж байна.
             </div>
 
+            <div className={'author'}>
+                <h2 className={'item'}>Зохиогч:</h2><h2>HurdBio</h2>
+            </div>
+
 
             <Row gutter={30}>
                 {
