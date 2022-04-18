@@ -16,7 +16,7 @@ const Detail = () => {
                 {
                     [1, 2, 3, 4].map((item: any, index: number) => {
                         return (
-                            <Col xxl={6} xl={6} xs={6}>
+                            <Col xxl={6} xl={6} xs={12}>
                                 <div className={'imageNft'}
                                      style={{backgroundImage: `url("https://storage.googleapis.com/mycoin-public/nft/1648101466001_8WBH9BYY0GYXGKOX8DQA.png")`}}/>
 
