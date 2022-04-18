@@ -1,53 +1,110 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
-.ant-page-header{
-  margin-bottom: 16px !important;
+
+.ant-page-header {
+    margin-bottom: 16px !important;
 }
+
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 #components-layout-demo-side .logo {
-  height: 32px;
-  margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .site-layout .site-layout-background {
-  background: #fff;
+    background: #fff;
 }
 
-.left{
-  margin-left: 20px;
+.left {
+    margin-left: 20px;
+}
+
+.btnDelete {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: red;
+}
+
+.btnConfirm {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #32cd32;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 90px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #32cd32;
+    margin-right: 20px;
+}
+
+.btnDetail {
+    background: #F39454;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 90px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+
+.imageNft {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.imageNftFrame {
+    height: 300px;
+    border-radius: 10px;
+    border-color: #9E9E9E;
+    border-width: 1px;
+    border-style: solid;
 }

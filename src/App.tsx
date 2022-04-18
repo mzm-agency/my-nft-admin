@@ -14,8 +14,9 @@ import Dashboard from './components/Dashboard';
 import {API} from '../src/api';
 
 import NftCreate from "./components/NftCreate";
-import Nft from "./components/Nft";
-import BalanceList from "./components/BalanceList";
+import NftDrop from "./components/NftDrop";
+import Authors from "./components/Authors";
+import Detail from "./components/Detail";
 
 const adminPath = process.env.PUBLIC_URL
 
@@ -58,15 +59,19 @@ function App() {
                         <Layout.Sider collapsible style={{marginTop: -4}}>
                             <div className="logo"/>
                             <Menu style={{height: "100vh"}} defaultSelectedKeys={['1']} mode="inline">
+
                                 <Menu.Item key="1" icon={<TeamOutlined/>} title="NFT">
-                                    <Link to={`${adminPath}/exchange/nftCreate`}>Create Nft</Link>
+                                    <Link to={`${adminPath}/exchange/nftDrop`}>NftDrops</Link>
                                 </Menu.Item>
                                 <Menu.Item key="2" icon={<TeamOutlined/>} title="NFT">
-                                    <Link to={`${adminPath}/exchange/nft`}>Nft</Link>
+                                    <Link to={`${adminPath}/exchange/nftCreate`}>Create Nft</Link>
                                 </Menu.Item>
                                 <Menu.Item key="3" icon={<TeamOutlined/>} title="NFT">
-                                    <Link to={`${adminPath}/exchange/balance`}>Дансны хуулга</Link>
+                                    <Link to={`${adminPath}/exchange/authors`}>Зохиогчид</Link>
                                 </Menu.Item>
+                                {/*<Menu.Item key="4" icon={<TeamOutlined/>} title="NFT">*/}
+                                {/*    <Link to={`${adminPath}/exchange/nftDrop/detail`}>Detail</Link>*/}
+                                {/*</Menu.Item>*/}
                             </Menu>
                         </Layout.Sider>
                         <Layout className="site-layout" style={{marginTop: 20}}>
@@ -74,8 +79,9 @@ function App() {
                                 <Routes>
                                     <Route path={`${adminPath}/`} element={<Dashboard/>}/>
                                     <Route path={`${adminPath}/exchange/nftCreate`} element={<NftCreate/>}/>
-                                    <Route path={`${adminPath}/exchange/nft`} element={<Nft/>}/>
-                                    <Route path={`${adminPath}/exchange/balance`} element={<BalanceList/>}/>
+                                    <Route path={`${adminPath}/exchange/nftDrop`} element={<NftDrop/>}/>
+                                    <Route path={`${adminPath}/exchange/authors`} element={<Authors/>}/>
+                                    <Route path={`${adminPath}/exchange/nftDrop/detail`} element={<Detail/>}/>
                                 </Routes>
                             </Layout.Content>
                             <Layout.Footer style={{textAlign: 'center'}}>Ant Design ©2021 Created by Ant
