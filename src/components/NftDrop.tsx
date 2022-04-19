@@ -1,98 +1,10 @@
-import React, {useCallback, useState} from 'react'
-import {Button, Form, Input, Table, Tag} from "antd";
-import {Link} from "react-router-dom";
+import React, {useCallback, useEffect, useState} from 'react'
+import {Avatar, Button, Form, Input, Table, Tag} from "antd";
+import {Link, useParams} from "react-router-dom";
+import {API} from "../api";
+import queryString from "query-string";
 
-const adminPath = process.env.PUBLIC_URL
-const dataSource = [
-    {
-        key: '1',
-        author: 'Nomodia_Tsogt',
-        name: 'Nomadic Mongo Art Collection',
-        drops: '13',
-        date: '2022.04.10 15:00',
-
-
-    },
-    {
-        key: '2',
-        author: 'Ulzii-Orshih',
-        name: 'Mongolian Wolfs Collection',
-        drops: '20',
-        date: '2022.04.15 13:00',
-
-
-    },
-    {
-        key: '3',
-        author: 'Zorgio',
-        name: 'Broken Money Nft Collection',
-        drops: '21',
-        date: '2022.05.10 16:00',
-
-    },
-    {
-        key: '4',
-        author: 'SumbeArt',
-        name: 'Bad Money Nft Collection',
-        drops: '10',
-        date: '2022.06.20 18:00',
-
-
-    },
-];
-
-const columns = [
-    {
-        title: 'Author',
-        dataIndex: 'author',
-        key: 'author',
-    },
-    {
-        title: 'Drops Name',
-        dataIndex: 'name',
-        key: 'name',
-    },
-    {
-        title: 'Drops NFTs',
-        dataIndex: 'drops',
-        key: 'drops',
-    },
-    {
-        title: 'Open Date',
-        dataIndex: 'date',
-        key: 'date',
-    },
-    {
-        title: 'Detail',
-        dataIndex: 'detail',
-        key: 'date',
-        render: (tags: any) => (
-            <Link to={`${adminPath}/exchange/nftDrop/detail`} style={{display: "flex"}}>
-                <div onClick={() => {
-                }} className={'btnDetail'}>
-                    Дэлгэрэнгүй
-                </div>
-            </Link>
-        ),
-    },
-    {
-        title: 'Төлөв',
-        key: 'tags',
-        render: (tags: any) => (
-            <div style={{display: "flex"}}>
-                <div onClick={() => {
-                }} className={'btnConfirm'}>
-                    Зөвшөөрөх
-                </div>
-                <div onClick={() => {
-                }} className={'btnDelete'}>
-                    Цуцлах
-                </div>
-
-            </div>
-        ),
-    },
-]
+const adminPath = process.env.PUBLIC_URL;
 
 interface State {
     loading: boolean
@@ -107,33 +19,92 @@ const initialState: State = {
 interface Filter {
     page: number
     limit: number
-    email: string
-    uid: string
+    name: string
 }
 
 const initialFilter: Filter = {
     page: 1,
     limit: 10,
-    email: "",
-    uid: ""
+    name: ""
 }
 
 const NftDrop = () => {
+    const {status} = useParams()
     const [filter, updateFilter] = useState(initialFilter);
-    const [loading, setLoading] = useState(false);
     const [state, updateState] = useState(initialState);
 
-    const onFinish = useCallback((values) => {
-        {
+    const fetchContent = useCallback(async ()=>{
+        updateState({...state,loading: true})
+        try{
+            const response = await API.get({apiVersion:"nft"})(`/drop/list/${status}?${queryString.stringify(filter)}`);
+            updateState({
+                loading: false,
+                result: response
+            })
+        }catch (e) {
+            updateState({
+                loading: false,
+                result: {}
+            })
         }
+    },[filter, state])
+
+    const onFinish = useCallback((values) => {
+
     }, [state, filter]);
     const clearSearch = useCallback(() => {
 
     }, [])
 
     const handleTableChange = useCallback((pagination, filters, sorter) => {
-
+        updateFilter({
+            ...filter,
+            page: pagination.pageSize
+        })
     }, [state, filter]);
+
+
+    useEffect(()=>{
+        fetchContent()
+    },[status, filter])
+
+    const columns = [
+        {
+            title: 'Logo',
+            dataIndex: 'logo',
+            render: (text:any, record: any) => (
+                <Avatar src={record.logo} />
+            ),
+        },
+        {
+            title: 'Drops Name',
+            dataIndex: 'title',
+        },
+        {
+            title: 'Drops NFTs',
+            dataIndex: 'drops',
+            key: 'drops',
+        },
+        {
+            title: 'Open Date',
+            dataIndex: 'start_date',
+        },
+        {
+            title: 'End Date',
+            dataIndex: 'end_date',
+        },
+        {
+            title: 'Action',
+            render: (text:any, record: any) => (
+                <Link to={`${adminPath}/nftDrop/detail/${record.id}`} style={{display: "flex"}}>
+                    <div onClick={() => {
+                    }} className={'btnDetail'}>
+                        Дэлгэрэнгүй
+                    </div>
+                </Link>
+            ),
+        },
+    ]
 
     return (
         <div>
@@ -165,13 +136,14 @@ const NftDrop = () => {
             </div>
             <Table
                 size="middle"
-                dataSource={dataSource} columns={columns}
+                dataSource={state.result?.rows || []}
+                columns={columns}
                 pagination={{
                     total: state.result?.count || 0,
                     current: filter.page,
                     pageSize: filter.limit
                 }}
-                loading={loading}
+                loading={state.loading}
                 onChange={handleTableChange}
             />
         </div>
