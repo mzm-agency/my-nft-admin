@@ -108,3 +108,99 @@
     border-width: 1px;
     border-style: solid;
 }
+
+.btnDetailTransaction {
+    background: #9E9E9E;
+    color: #000;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.author {
+    display: flex;
+}
+
+.author .item {
+    margin-right: 20px;
+}
+
+.transactionNft .headerBox {
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: rgb(61 61 61 / 30%) 0px 0px 10px -3px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+.transactionNft .transactionBox {
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: rgb(61 61 61 / 30%) 0px 0px 10px -3px;
+    margin-bottom: 30px;
+}
+.transactionNft .transactionBox .middle {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom-color: #CBD5E0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.transactionNft .transactionBox .middle:last-child {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.transactionNft .transactionBox .middle p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 30px;
+    color: #3A3A3A;
+}
+.transactionNft .transactionBox .middle p:last-child {
+    margin-right: 0px;
+}
+.transactionNft .headerBox .top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom-color: #CBD5E0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+}
+.transactionNft .headerBox .bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.transactionNft .headerBox .bottom p {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    color: #000;
+}
+.transactionNft .headerBox p{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    color: #3A3A3A;
+}
+

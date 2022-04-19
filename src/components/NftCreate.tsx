@@ -1,5 +1,8 @@
 import React, {useCallback, useState} from 'react'
 import {Button, Form, Input, Table, Tag} from "antd";
+import {Link} from "react-router-dom";
+
+const adminPath = process.env.PUBLIC_URL
 
 const dataSource = [
     {
@@ -68,8 +71,22 @@ const columns = [
     {
         title: 'NFT Picture',
         dataIndex: 'picture',
-        key: 'picture',
+        key: 'pict  ure',
     },
+    {
+        title: 'NFT transactions',
+        dataIndex: 'transactions',
+        key: 'transactions',
+        render: (tags: any) => (
+            <Link to={`${adminPath}/exchange/nftDrop/transactionNft`} style={{display: "flex"}}>
+                <div onClick={() => {
+                }} className={'btnDetailTransaction'}>
+                    Оролцогчид
+                </div>
+            </Link>
+        ),
+    },
+
     {
         title: 'Төлөв',
         key: 'tags',

@@ -2,16 +2,13 @@ import React, {useCallback, useEffect, useState} from 'react';
 import 'antd/dist/antd.min.css';
 import './App.css';
 import {
-    DashboardOutlined,
-    ScheduleOutlined,
+    PieChartOutlined,
+    FileOutlined,
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
 import {Breadcrumb, Layout, Menu, Skeleton} from 'antd';
 import {BrowserRouter, Link, Route, Routes, useNavigate} from 'react-router-dom';
-
-import MarketContext from './providers/markets/MarketContext';
-
 import Dashboard from './components/Dashboard';
 
 import {API} from '../src/api';
@@ -21,6 +18,7 @@ import NftDrop from "./components/NftDrop";
 import Authors from "./components/Authors";
 import Detail from "./components/Detail";
 import Login from "./components/Login";
+import TransactionNft from "./components/TransactionNft";
 
 const adminPath = process.env.PUBLIC_URL
 
@@ -97,6 +95,7 @@ function App() {
                                         <Route path={`${adminPath}/authors`} element={<Authors/>}/>
                                         <Route path={`${adminPath}/nftDrop/detail/:dropId`} element={<Detail/>}/>
                                         <Route path={`${adminPath}/login`} element={<Login/>}/>
+                                        <Route path={`${adminPath}/exchange/nftDrop/transactionNft`} element={<TransactionNft/>}/>
                                     </Routes>
                                 </Layout.Content>
                                 <Layout.Footer style={{textAlign: 'center'}}>Ant Design ©2021 Created by Ant
